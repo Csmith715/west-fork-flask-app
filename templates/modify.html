@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Modify Data</title>
+  </head>
+  <body>
+    <h1>Modify Data</h1>
+    <form action="/modify" method="post">
+      <h2>Payors</h2>
+      <table border="1">
+        <tr>
+          <th>Before</th>
+          <th>After</th>
+        </tr>
+        {% for payor in unique_payors %}
+        <tr>
+          <td>{{ payor }}</td>
+          <td><input type="text" name="payor_change"></td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <h2>Facility</h2>
+      <table border="1">
+        <tr>
+          <th>Before</th>
+          <th>After</th>
+        </tr>
+        {% for facility in unique_facilities %}
+        <tr>
+          <td>{{ facility }}</td>
+          <td><input type="text" name="facility_change"></td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <input type="submit" value="Modify and Download">
+    </form>
+
+  </body>
+</html>

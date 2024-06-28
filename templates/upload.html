@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Upload File or Folder</title>
+  </head>
+  <body>
+    <h1>Upload File or Folder</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="file">Select file(s) to upload:</label>
+        <input type="file" name="file" multiple>
+      </div>
+      <div>
+        <label for="folder_path">Or specify a folder path to upload all CSV files:</label>
+        <input type="text" name="folder_path" id="folder_path">
+      </div>
+      <div>
+        <label for="facility_name">Optional: Specify Facility name for single file upload:</label>
+        <input type="text" name="facility_name" id="facility_name">
+      </div>
+      <input type="submit" value="Upload">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rename Columns</title>
+    <style>
+      .dataframe {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .dataframe th, .dataframe td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      .dataframe th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rename Columns</h1>
+    <form action="/rename_columns" method="post">
+      <table border="1">
+        <tr>
+          <th>Current Name</th>
+          <th>New Name</th>
+        </tr>
+        {% for column in columns %}
+        <tr>
+          <td>{{ column }}</td>
+          <td><input type="text" name="column_name" value="{{ column }}"></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <input type="submit" value="Rename Columns">
+    </form>
+
+    <h2>DataFrame Preview</h2>
+    <div>
+      {{ table|safe }}
+    </div>
+  </body>
+</html>
