@@ -9,6 +9,7 @@ from utils import column_mappings, payor_mappings
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'csv', 'xlsx'}
+file_update = FileUpdate()
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
@@ -133,5 +134,5 @@ def download_file():
 
 if __name__ == '__main__':
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    file_update = FileUpdate()
+    # file_update = FileUpdate()
     app.run(debug=True)
